@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import SideBar from './Components/SideBar/SideBar';
+import Chart from './Components/Chart/Chart';
+import UseEmployeeData from './Hooks/UseEmployeeData';
 import './App.css';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 function App() {
+  const [sourceId, setSourceId] = useState('');
+  const [targetId, setTargetId] = useState('');
+  const employees = UseEmployeeData(sourceId, targetId);
+  const [department, setDepartment] = useState('');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DndProvider backend={HTML5Backend} >
+      <div className="App">
+        <SideBar employees={employees} department={department} setDepartment={setDepartment} />
+        <Chart employees={employees} department={department} setSourceId ={setSourceId} setTargetId={setTargetId} />
+      </div>
+    </DndProvider>
   );
 }
 

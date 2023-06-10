@@ -1,0 +1,16 @@
+.list {
+    list-style: none;
+    padding: .5rem 1rem;
+    overflow: auto;
+    height: calc(100vh - 9rem);
+}
+
+.list li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.list-card {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}

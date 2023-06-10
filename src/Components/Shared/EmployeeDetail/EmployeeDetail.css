@@ -1,0 +1,11 @@
+.employee-typography {
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    font-size: 14px;
+}
+
+p {
+    font-size: 12px;
+    color: #999;
+}

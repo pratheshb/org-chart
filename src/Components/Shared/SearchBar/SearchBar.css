@@ -1,0 +1,17 @@
+.search-container {
+    padding: .5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.search {
+    padding: .25rem .5rem;
+    color: #666;
+    border-radius: 4px;
+    border: 1px solid #666;
+}
+
+.pointer {
+    cursor: pointer;
+}
