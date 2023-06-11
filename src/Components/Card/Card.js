@@ -22,7 +22,6 @@ export default function Card({ employee, setSourceId, setTargetId }) {
         drop: () => ({id: employee.id})
     });
     return <div
-        className='chart-card'
         ref={el => { drag(el); drop(el); }}
         style={{
             opacity: isDragging ? 0.5 : 1,

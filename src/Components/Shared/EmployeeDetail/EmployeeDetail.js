@@ -7,7 +7,7 @@ function Avatar({ imgSrc, altText }) {
 export default function EmployeeDetail({ employee }) {
     return <>
         <Avatar imgSrc={employee.avatar} altText={employee.name} />
-        <div className="employee-typography">
+        <div>
             <strong>{employee.name}</strong>
             <p>{employee.designation}</p>
             <p>{employee.department}</p>
