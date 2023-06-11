@@ -4,16 +4,16 @@ function isMemberAvailable(employee, department) {
     return employee.department === department;
 }
 
-function isManagerAvailable(employee, department, list) {
-    let manager = list[employee.managerId - 1];
-    while (manager) {
-        if (isMemberAvailable(manager, department)) {
-            return true;
-        }
-        manager = list[manager.managerId - 1];
-    }
-    return false;
-}
+// function isManagerAvailable(employee, department, list) {
+//     let manager = list[employee.managerId - 1];
+//     while (manager) {
+//         if (isMemberAvailable(manager, department)) {
+//             return true;
+//         }
+//         manager = list[manager.managerId - 1];
+//     }
+//     return false;
+// }
 
 function isChildAvailable(employee, department, list) {
     for (const childId of employee.childIds) {
@@ -33,5 +33,5 @@ export default function isEmployeeAvailable(employee, department, list) {
     if (!department) {
         return true;
     }
-    return isMemberAvailable(employee, department) || isManagerAvailable(employee, department, list) || isChildAvailable(employee, department, list);
+    return isMemberAvailable(employee, department) || isChildAvailable(employee, department, list);
 }
