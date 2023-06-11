@@ -33,7 +33,7 @@ export default function UseEmployeeData(sourceId, targetId) {
 
   useEffect(() => {
 
-    if (sourceId && targetId) {
+    if (sourceId && targetId && sourceId !== targetId) {
 
       const isTargetChild = (employee) => {
         for(const childId of employee.childIds) {
